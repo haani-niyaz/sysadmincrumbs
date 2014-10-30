@@ -36,7 +36,7 @@ chown root:root <filename>
 4. All files now added to `/etc/sudoers.d` will be automatically imported 
 
 
-### Check what sudo acces a user has ###
+### How to check what sudo acces a user has? ###
 
 `sudo -l -U bob`
 
