@@ -283,3 +283,10 @@ Command to build the RPM:
 `rpmbuild -ba rpmbuild/SPECS/myappname.spec`
 
 If all goes well, your RPM will be available in the `rpmbuild/RPMS` dir.
+
+
+#### Nuts and Bolts  ####
+
+Now that we have a basic idea of building RPMs, lets take a look at some of the more finer details.
+
+(coming soon!)
