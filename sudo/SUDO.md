@@ -8,7 +8,7 @@ This is the recommended approach as it avoides polluting the original sudo file 
 Instead of modifying the `/etc/sudoers` file do the following:
 
 1. Create a `/etc/sudoers.d` dir if it does not exist
-2. Create a file with no extension and file permission 0440
+2. Create a file with no extension and file permission 0440 (do this outside of the `/etc/sudoers.d` dir)
 
 ```
 chmod 0440 <filename>
