@@ -307,7 +307,7 @@ class ssh::params{
 
 
 class ssh::install {
-	include ssh:params
+	include ssh::params
 
 package{ 'ssh':
 	ensure => present,
