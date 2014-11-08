@@ -220,7 +220,7 @@ Puppet is a declarative language so within the same scope you cannot redefine a 
 
 ##### What is a variable scope? ####
 
-Every class, definition or node introduces a scop. Outside of this scope is whats known as 'top scope'.
+Every class, definition or node introduces a scope. Outside of this scope is whats known as 'top scope'.
 
 The *top scope* can be access by prepending `::` to  a variable. Its recommended to use Factor variables in the top scope.
 
