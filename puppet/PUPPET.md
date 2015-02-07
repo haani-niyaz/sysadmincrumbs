@@ -9,7 +9,9 @@
 `/etc/puppet/puppet.conf` is your standard config file. There are 3 sections to take note of.
 
 `[main]`   - global configuration section
+
 `[master]` - master specific configuration
+
 `[agent]`  - agent specific configuration
 
 
@@ -112,9 +114,7 @@ sudo puppet agent --test --server=puppet.server.com
 
 ### Modules  ###
 
-A module would usually contain everything needed to configure an application.
-
-A Module has a specific directory structure and `init.pp` file which allows Puppet to automatically load the file. 
+A Module usually contain everything needed to configure an application. It also has a specific directory structure and `init.pp` file which allows Puppet to automatically load the file. 
 
 To perform this automatic loading, Puppet checks the directories set in the `modulepath` which is set in the `[main]` secction of the `/etc/puppet/puppet.conf` file.
 
@@ -190,7 +190,7 @@ No two resources of the same type can share the same *title*. Also, don't forget
 	}
 ```
 
-You will notice the **File** resource typed capitalized without a title. This syntax is referred to as a *resource default* which allows to specify defaults for a particular resource type. In this example all *file* resource typed will share the owner & group permissions.
+You will notice the **File** resource typed capitalized without a title. This syntax is referred to as a *resource default* which allows to specify defaults for a particular resource type. In this example all *file* resource types will share the owner & group permissions.
 
 
 ##### How can I use common attributes across multiple resources? ####
@@ -220,7 +220,7 @@ Puppet is a declarative language so within the same scope you cannot redefine a 
 
 ##### What is a variable scope? ####
 
-Every class, definition or node introduces a scop. Outside of this scope is whats known as 'top scope'.
+Every class, definition or node introduces a scope. Outside of this scope is whats known as 'top scope'.
 
 The *top scope* can be access by prepending `::` to  a variable. Its recommended to use Factor variables in the top scope.
 
@@ -307,7 +307,7 @@ class ssh::params{
 
 
 class ssh::install {
-	include ssh:params
+	include ssh::params
 
 package{ 'ssh':
 	ensure => present,
