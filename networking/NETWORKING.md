@@ -1,4 +1,7 @@
 
+Network Troubleshooting
+=====================
+
 When troubleshooting network issues from host **A** to host **B**, check the following:
 
 #### Do you have connectivity? ####
