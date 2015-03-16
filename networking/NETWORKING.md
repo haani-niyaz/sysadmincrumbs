@@ -1,7 +1,4 @@
 
-Network Troubleshooting
-=====================
-
 When troubleshooting network issues from host **A** to host **B**, check the following:
 
 #### Do you have connectivity? ####
@@ -37,7 +34,7 @@ If you can’t ping it could just mean ICMP packets have been blocked.
 or (If ICMP isn’t blocked) your switch port  on your host could be set to the wrong VLAN.
 
 
-**Check DNS**
+#### Check DNS ####
 
 1. Perform a `nslookup` to check if it resolves the IP.
 
@@ -57,11 +54,11 @@ If a name server is not configured check `/etc/resolv.conf`
         `-- is_the_nameserver_down?
 ```
 
-##### Is there a route to the remote host?  #####
+#### Is there a route to the remote host?  ####
 
 1. Perform a `traceroute`. If ping works but traceroute doesn’t it could be because UDP is blocked.  
 
-##### Is the port open? #####
+#### Is the port open? ####
 
 1. Perform a `telnet` test. If it fails either the remote machine is not listening on that port or the firewall is blocking it.
 
