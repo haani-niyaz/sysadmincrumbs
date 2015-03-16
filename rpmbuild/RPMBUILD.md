@@ -1,5 +1,3 @@
-## How to Build RPMs ##
-
 The following guide focuses on how source files can be retrofitted to be installed as RPMs.
 
 ### Basics of Building RPMs ###
