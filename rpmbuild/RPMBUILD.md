@@ -1,3 +1,5 @@
+## Building RPMs ##
+
 The following guide focuses on how source files can be retrofitted to be installed as RPMs.
 
 ### Basics of Building RPMs ###
@@ -24,7 +26,7 @@ Specify the build area:
 ```
 
 
-### Macros ###
+#### Macros ####
 
 The `~/.rpmmacros` file contains global macros defined as `%{_macroname}`. Notice the global macro birthmark of `_` preceding the  name.  These global variables are accessible to all *.spec* files.
 
@@ -45,7 +47,7 @@ Source0:        %{name}-%{version}.zip
 ```
 
 
-#### Examples of built-in macros ####
+##### Examples of built-in macros #####
 ```
 %_prefix /usr
 %_sysconfdir /etc
@@ -56,7 +58,7 @@ Source0:        %{name}-%{version}.zip
 %_defaultdocdir %{_usr}/share/doc
 ```
 
-#### How to define custom macros? ####
+##### How to define custom macros? #####
 
 In addition to the built-in macros, you can define your own to make it easier to manage your packages.
 
@@ -84,7 +86,7 @@ Version:        %{package_version}
 
 
 
-### Deep Dive ###
+#### Deep Dive ####
 
 Lets jump into building a RPM with a real example. We will be packaging a php application.
 
@@ -286,7 +288,7 @@ What if I want to give different permissions to different files?
 All of the directories, sub-directories and files will be installed to the file system when the RPM is installed.
 
 
-### Building the RPM ###
+#### Building the RPM ####
 
 Now that the .spec file is complete, we can proceed to building the RPM.
 
@@ -307,5 +309,5 @@ Now that we have a basic idea of building RPMs, lets take a look at some of the 
 #### Config Files  ####
 
 I found the following article quite useful to understand how the `%config` macro and its options work:
-http://www-uxsup.csx.cam.ac.uk/~jw35/docs/rpm_config.html
+[Config file matrix](http://www-uxsup.csx.cam.ac.uk/~jw35/docs/rpm_config.html)
 
