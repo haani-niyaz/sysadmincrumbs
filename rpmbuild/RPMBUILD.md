@@ -69,6 +69,22 @@ In addition to the built-in macros, you can define your own to make it easier to
 # Accessing macro
 %{major}
 ```
+##### How to pass custom macros as arguments? #####
+
+When you run `rpmbuild` you can provide it with arguments which can then be used within your `.spec` file:
+
+```
+# command
+rpmbuild --define "package_version 1.2" myrpm-rpmbuild/SPEC/myrpm.spec
+```
+As highlighted in the previous section 'package_version' can be used as `%{package_version}` in the `myrpm.spec` file as shown below:
+
+```
+Name:          	myrpm
+Version:        %{package_version}
+```
+
+
 
 #### Deep Dive ####
 
@@ -132,7 +148,7 @@ rm %{SOURCE0}
 /var/composer.*
 ```
 
-##### Taking the .spec File Apart #####
+#### Taking the .spec File Apart ####
 
 **Preamble**
 
@@ -285,8 +301,13 @@ Command to build the RPM:
 If all goes well, your RPM will be available in the `rpmbuild/RPMS` dir.
 
 
-#### Nuts and Bolts  ####
+### Nuts and Bolts  ###
 
 Now that we have a basic idea of building RPMs, lets take a look at some of the more finer details.
 
-(coming soon!)
+
+#### Config Files  ####
+
+I found the following article quite useful to understand how the `%config` macro and its options work:
+http://www-uxsup.csx.cam.ac.uk/~jw35/docs/rpm_config.html
+
