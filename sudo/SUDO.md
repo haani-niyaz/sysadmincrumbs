@@ -1,5 +1,3 @@
-## Sudo ##
-
 
 ### How to Add groups/users to `/etc/sudoers`? ###
 
