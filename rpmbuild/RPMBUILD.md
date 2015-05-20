@@ -73,7 +73,7 @@ When you run `rpmbuild` you can provide it with arguments which can then be used
 
 ```
 # command
-rpmbuild --define "package_version 1.2" myrpm-rpmbuild/SPEC/myrpm.spec
+rpmbuild -ba --define "package_version 1.2" myrpm-rpmbuild/SPEC/myrpm.spec
 ```
 As highlighted in the previous section 'package_version' can be used as `%{package_version}` in the `myrpm.spec` file as shown below:
 
