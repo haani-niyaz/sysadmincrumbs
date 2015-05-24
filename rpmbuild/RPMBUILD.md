@@ -146,6 +146,12 @@ rm %{SOURCE0}
 /var/src
 /var/tests
 /var/composer.*
+
+
+%changelog
+* Sun Jul 13 2008 <some.user@ngmail.com> 
+- Initial Build.
+
 ```
 
 #### Taking the .spec File Apart ####
