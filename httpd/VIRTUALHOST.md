@@ -24,13 +24,10 @@ monitoring (app 2)
  * 
  */
 
-# /etc/httpd/conf/httpd.conf
-
 #
 # Use name-based virtual hosting.
 #
 NameVirtualHost *:80
-
 
 
 # /etc/httpd/conf.d/virtualhost-monitor.conf
@@ -63,6 +60,13 @@ NameVirtualHost *:80
  * 
  */
 
+
+#
+# Use name-based virtual hosting.
+#
+NameVirtualHost *:80
+
+
 # /etc/httpd/conf.d/virtualhost-monitor.conf
  <VirtualHost *:80>
 	ServerName monitor.com
@@ -80,3 +84,19 @@ NameVirtualHost *:80
 	DocumentRoot /var/www/booking
 </VirtualHost>
 ```
+
+
+#### Errors
+
+
+```
+[root@localhost conf.d]# sudo /etc/init.d/httpd restart
+Stopping httpd:                                            [  OK  ]
+Starting httpd: [Wed Aug 17 10:39:07 2016] [warn] _default_ VirtualHost overlap on port 80, the first has precedence
+                                                           [  OK  ]
+```
+
+
+You will get the above warning, which will result in only the first site being served no matter which domain you hit. This is why you need to set `NameVirtualHost *:80` in `/etc/httpd/conf/httpd/conf`. This tells your server to serve different virtual hosts based on the doman names used to reach it.
+
+Ensure you do a restart and clean your browser cache to avoid any issues.
